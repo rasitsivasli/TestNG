@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test name="ParameterTest">
+        <parameter name="isim" value="DE3"></parameter>
+        <parameter name="soyisim" value="Sivasli"></parameter>
+        <parameter name="yas" value="100"></parameter>
+        <classes>
+            <class name="test.C13_UsingParameters"></class>
+        </classes>
+    </test>
+    <test name="ParameterTest2">
+        <parameter name="isim" value="Rasit"></parameter>
+        <classes>
+            <class name="test.C13_UsingParameters">
+                <methods>
+                   <include name="parameterizedTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
