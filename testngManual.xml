@@ -4,7 +4,7 @@
     <test name="manual test1">
         <classes>
             <class name="test.C08_AssertionInfo"></class>
-            <class name="homeworks.HW01_DependsOnMethods"></class>
+            <class name="homeworks.H33_DependsOnMethods"></class>
         </classes>
 
     </test>

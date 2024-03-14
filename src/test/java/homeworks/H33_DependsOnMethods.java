@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 
-public class HW01_DependsOnMethods {
+public class H33_DependsOnMethods {
 
         /*
 Create tests that depend on each other

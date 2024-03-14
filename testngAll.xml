@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/sivas/IdeaProjects/TestNG">
         <classes>
-            <class name="homeworks.HW01_DependsOnMethods">
+            <class name="homeworks.H33_DependsOnMethods">
                 <methods>
                     <include name="faceBook"/>
                 </methods>

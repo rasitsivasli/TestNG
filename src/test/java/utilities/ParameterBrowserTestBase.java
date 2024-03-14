@@ -18,9 +18,9 @@ public class ParameterBrowserTestBase {
 
     @BeforeMethod
     @Parameters("browser")//her seferinde elle browseri degistirmemek icin methodumuza parametre olarak ekledik
-    public void setUp(@Optional("chrome")String browser){
+    public void setUp(@Optional("chrome") String browser) {
         //@Optional("chrome") : eger browser diye herhangi bir parametre olarak deger gonderilmezse, default olarak
-        //if(driver == null) {
+        if (driver == null) {
             switch (browser) {
                 case "chrome":
                     driver = new ChromeDriver();
@@ -38,7 +38,7 @@ public class ParameterBrowserTestBase {
                     driver = new EdgeDriver();
                     break;
             }
-        //}
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
