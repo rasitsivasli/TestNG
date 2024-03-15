@@ -1,5 +1,7 @@
 package test;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import utilities.TestBase;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,14 +9,19 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
 
-public class C24_DataProviderParameter extends TestBase {
+
+public class C24_DataProviderParameter{
     //Go to URL: https://opensource-demo.orangehrmlive.com/
     //Login with negative credentilas by Data Provider.
     //Then assert that ‘’Invalid credentials’’ is displayed.
 
     @Test(dataProvider = "getData")
     public void test(String username, String password){
+        WebDriver driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         driver.get("https://opensource-demo.orangehrmlive.com/");
         driver.findElement(By.xpath("//input[@name='username']")).sendKeys(username);
         driver.findElement(By.xpath("//input[@type='password']")).sendKeys(password);
@@ -26,7 +33,7 @@ public class C24_DataProviderParameter extends TestBase {
         //System.out.println(username+" "+password);
     }
 
-    @DataProvider
+    @DataProvider(parallel = true)
     public Object[][] getData(){
         return new Object[][]{
                 {"admin*","admin123"},

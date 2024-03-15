@@ -1,24 +1,12 @@
 package Mentoring;
 
-import com.github.javafaker.Faker;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import test.C17_DataProviderFaker;
-import test.C19_DataProviderClass;
 import utilities.DataProviderBase;
 import utilities.TestBase;
 
-import javax.swing.*;
-import java.io.FileInputStream;
-import java.io.IOException;
-
-public class C18_DataProvider extends TestBase {
+public class DataProvider_Exell extends TestBase {
     //farkli bir class dan datalarimizi da alarak kullanbilirz, bunun icin data provider olan
     //methodu dogru sekilde parametre olarak test methoduna entegre etmeliyiz.
 
