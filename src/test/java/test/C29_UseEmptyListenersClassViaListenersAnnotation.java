@@ -2,15 +2,15 @@ package test;
 
 import org.testng.Assert;
 import org.testng.ITestContext;
-import org.testng.ITestListener;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import utilities.EmptyListeners;
 
-@Listeners(utilities.Listeners.class)   //1.yöntemle Listeners classımızı Test Classımıxa bağladık
+@Listeners(EmptyListeners.class)   //1.yöntemle Listeners classımızı Test Classımıxa bağladık
                                         // Classımızı run ettiğimizde raporlara ulaşırız.
-public class C28_UseListenersClassViaListenersAnnotation {
-    @Test(dependsOnMethods = "successTest")
-    public void successfulTest(ITestContext context){
+public class C29_UseEmptyListenersClassViaListenersAnnotation {
+    @Test(dependsOnMethods = "successTest")// 4. test metodunun calismasina bagladik, cünkü önce burada data olusuyor.
+    public void successfulTest(ITestContext context){// ITestContext context test metodlari arasinda data alis verisi yapiyor
         Assert.assertEquals(1,1);
         int i = (int) context.getAttribute("data");
         System.out.println("i = " + i);

@@ -1,8 +1,5 @@
 package test;
-
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.*;
-import org.testng.annotations.DataProvider;
 import utilities.ReusableMethods;
 import utilities.TestBase;
 import org.testng.Assert;
@@ -25,7 +22,7 @@ public class C14_XMLFile_ParameterTest extends TestBase  {
 
         //Assert get text result test that the result text contains the searched Word.
         WebElement verify = driver.findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
-        Assertions.assertTrue(verify.getText().contains("Java"));
+        Assert.assertTrue(verify.getText().contains("Java"));
 
         driver.navigate().back();
         WebElement searchBox2 = driver.findElement(By.id("twotabsearchtextbox"));
@@ -33,7 +30,7 @@ public class C14_XMLFile_ParameterTest extends TestBase  {
 
         //Assert get text result test that the result text contains the searched Word.
         WebElement verifySelenium = driver.findElement(By.xpath("//span[.='\"Selenium\"']"));
-        Assertions.assertTrue(verifySelenium.getText().contains("Selenium"));
+        Assert.assertTrue(verifySelenium.getText().contains("Selenium"));
 
 
     }
@@ -49,7 +46,7 @@ public class C14_XMLFile_ParameterTest extends TestBase  {
 
         //Assert get text result test that the result text contains the searched Word.
         WebElement verify = driver.findElement(By.xpath("//span[@class='a-color-state a-text-bold']"));
-        Assertions.assertTrue(verify.getText().contains(keyword));
+        Assert.assertTrue(verify.getText().contains(keyword));
 
     }
 

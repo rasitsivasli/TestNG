@@ -22,6 +22,7 @@ public class ReusableMethods {
 
     public static void amazonCaptcha(WebDriver driver) {
         try {
+            //WebElement captcha = driver.findElement(By.xpath("//*[.='Try different image']"));
             WebElement captcha = driver.findElement(By.xpath("//a[@onclick='window.location.reload()']"));
             captcha.click();
         } catch (NoSuchElementException e) {

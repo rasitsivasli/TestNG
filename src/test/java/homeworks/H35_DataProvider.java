@@ -1,9 +1,10 @@
 package homeworks;
 
-import org.junit.jupiter.api.Assertions;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utilities.DataProviderBase;
@@ -29,6 +30,6 @@ public class H35_DataProvider extends TestBase {
 
         //Then assert that ''Invalid credentials'’ is displayed.
         WebElement verify = driver.findElement(By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']"));
-        Assertions.assertTrue(verify.getText().contains("Invalid credentials"));
+        Assert.assertTrue(verify.getText().contains("Invalid credentials"));
     }
 }

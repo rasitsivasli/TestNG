@@ -4,18 +4,25 @@ import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.Test;
 
-public class C31_UseTestngListenersViaRunConfiguration {
+public class C32_UseTestngListenersViaRunConfiguration {
 
     //TestNG hazır listeners'ları Run-> Edit config ile çıkan ekrandan bağlayabiliriz.
-    @Test
-    public void successfulTest(){
+    @Test(dependsOnMethods = "successTest")
+    public void successfulTest(ITestContext context){
         Assert.assertEquals(1,1);
-
+        int i = (int) context.getAttribute("data");
+        System.out.println("i = " + i);
     }
 
     @Test
     public void failedTest(){
         Assert.assertEquals(1,2);
+    }
+
+    @Test (timeOut = 1000)
+    public void failedTestTimeout() throws InterruptedException {
+        Thread.sleep(2001);
+        System.out.println("I'm inside the failedTestTimeout test method");
     }
 
     @Test
